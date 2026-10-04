@@ -1,32 +1,50 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-
+import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 
 
 /*==========================| 3D Model |==========================*/
 const container = document.getElementById("three-container");
 
+if (!container) {
+throw new Error('Élément "#three-container" introuvable dans le HTML.');
+}
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
-  75,
-  container.clientWidth / container.clientHeight,
-  0.1,
-  4000
+45,
+1,
+0.1,
+4000
 );
 
 camera.position.set(0, 2, 10);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({
+antialias: true,
+alpha: true
+});
+
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor(0x000000, 0);
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
 container.appendChild(renderer.domElement);
 
-scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(5, 10, 7);
+scene.add(directionalLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+
 controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
 controls.enableZoom = false;
 controls.enablePan = false;
 controls.enableRotate = true;
@@ -34,49 +52,87 @@ controls.enableRotate = true;
 controls.minPolarAngle = Math.PI / 2;
 controls.maxPolarAngle = Math.PI / 2;
 
-const loader = new GLTFLoader();
-
-let model;
 const pivot = new THREE.Group();
 scene.add(pivot);
 
-loader.load("./assets/models/model.glb", (gltf) => {
-  model = gltf.scene;
+const loader = new GLTFLoader();
 
-  const box = new THREE.Box3().setFromObject(model);
-  const center = box.getCenter(new THREE.Vector3());
-  const size = box.getSize(new THREE.Vector3()).length();
+loader.setMeshoptDecoder(MeshoptDecoder);
 
-  model.position.sub(center);
+loader.load(
+"./assets/models/model.glb",
 
-  pivot.add(model);
+(gltf) => {
+const model = gltf.scene;
 
-  camera.position.set(0, size * 0.2, size * 0.8);
+const box = new THREE.Box3().setFromObject(model);
+const center = box.getCenter(new THREE.Vector3());
+const size = box.getSize(new THREE.Vector3());
 
-  controls.target.set(0, 0, 0);
-  controls.update();
-});
+model.position.sub(center);
+
+pivot.add(model);
+
+const maxDimension = Math.max(size.x, size.y, size.z);
+
+const fovRadians = THREE.MathUtils.degToRad(camera.fov);
+const distance = (maxDimension / 2) / Math.tan(fovRadians / 2);
+
+camera.position.set(
+  0,
+  maxDimension * 0.08,
+  Math.max(distance * 1.6, 1)
+);
+
+camera.near = Math.max(maxDimension / 1000, 0.01);
+camera.far = Math.max(maxDimension * 100, 1000);
+camera.updateProjectionMatrix();
+
+controls.target.set(0, 0, 0);
+controls.update();
+
+console.log("Modèle GLB chargé avec succès :", model);
+console.log("Dimensions du modèle :", size);
+
+},
+
+(progress) => {
+  if (progress.total > 0) {
+    const percent = (progress.loaded / progress.total) * 100;
+
+    console.log(`Chargement du modèle : ${percent.toFixed(1)} %`);
+  }
+},
+
+(error) => {
+console.error("Erreur lors du chargement du modèle GLB :", error);
+}
+);
 
 function resize() {
-  const width = container.clientWidth;
-  const height = container.clientHeight;
+const width = container.clientWidth;
+const height = container.clientHeight;
 
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+if (width === 0 || height === 0) {
+return;
+}
 
-  renderer.setSize(width, height);
+camera.aspect = width / height;
+camera.updateProjectionMatrix();
+
+renderer.setSize(width, height);
 }
 
 window.addEventListener("resize", resize);
 resize();
 
 function animate() {
-  requestAnimationFrame(animate);
+requestAnimationFrame(animate);
 
-  pivot.rotation.y += 0.001;
+pivot.rotation.y += 0.001;
 
-  controls.update();
-  renderer.render(scene, camera);
+controls.update();
+renderer.render(scene, camera);
 }
 
 animate();
