@@ -37,10 +37,16 @@ h2 {
   color: #4F2513; 
   margin: 0;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 900;
   font-family: "DM Serif Display", serif;
 }
+@media (min-width: 2560px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
 
 /*==========================| FIXED-ACTIONS |==========================*/
 .fixed-actions {
@@ -77,7 +83,12 @@ h2 {
   color: #FBF7EC;
   border: 2px solid #FBF7EC;
 }
-
+@media (min-width: 2560px) {
+  .fixed-actions ul li a {
+    padding: 6px 15px;
+    font-size: 1rem;
+  }
+}
 
 /*==========================| SECTION — MASTHEAD |==========================*/
 .section-masthead {
@@ -193,6 +204,28 @@ h1 {
   pointer-events: none;
 }
 
+@media (min-width: 2560px) {
+  .masthead-content {
+    width: 1100px;
+  }
+  h1 {
+    font-size: 5.1rem;
+  }
+  .masthead-info {
+    width: 570px;
+  }
+  .masthead-info .box-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .masthead-info .box-text .label {
+    font-size: 1.4rem;
+  }
+  .masthead-info .box-text .value {
+    font-size: 1.1rem;
+  }
+}
+
 
 /*==========================| MAIN |==========================*/
 main {
@@ -206,16 +239,25 @@ main {
 /*==========================| SECTION — SKILLS |==========================*/
 .section-skills {
   margin: 0 auto;
-  max-width: 1800px;
   height: 100vh;
-  padding: 50px; 
+  padding: 50px 50px 50px 50px; 
 }
 .section-skills-content {
   display: grid; 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 0.8fr 1fr;
   gap: 0px;
   justify-content: center;
   align-items: center;
+}
+.tag-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 630px;
+}
+.box-content-tag {
+  width: 590px;
 }
 #three-container {
   width: 100%;
@@ -231,7 +273,7 @@ main {
   letter-spacing: 0.15em;
   color: #4F2513; 
   margin: 36px 0 14px 0;
-  font-size: 1.4rem ;
+  font-size: 1.4rem;
   font-weight: 900;
   font-family: "DM Serif Display", serif;
 }
@@ -297,6 +339,20 @@ main {
   font-weight: 800;
 }
 
+@media (min-width: 1920px) {
+  .section-skills {
+    padding: 70px 50px 50px 50px; 
+  }
+  .section-skills h3 {
+    margin: 36px 0 14px 0;
+    font-size: 2rem;
+  }
+  .tag {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+  }
+}
+
 
 /*==========================| SECTION — PROJECTS |==========================*/
 .section-projects {
@@ -356,20 +412,26 @@ main {
   border: 2px solid transparent;
   background-color: #4F2513;
   color: #F5F1ED;
-  font: 600 0.8rem "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
 .filter-btn:hover {
   background-color: #F5F1ED;
   color: #4F2513;
-  font: 600 0.8rem "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   border: 2px solid #4F2513;
 }
 .filter-btn.active {
   background-color: #F5F1ED;
   color: #4F2513;
-  font: 600 0.8rem "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   border: 2px solid #4F2513;
 }
 
@@ -506,6 +568,23 @@ main {
   transition: width 0.15s linear;
 }
 
+@media (min-width: 2560px) {
+  .tag {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+  }
+  .project-card {
+    width: 560px;
+    height: 500px;
+  }
+  .project-card-image img {
+    height: 250px;
+  }
+}
 
 /*==========================| FOOTER |==========================*/
 footer {
