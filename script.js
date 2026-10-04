@@ -40,7 +40,7 @@ let model;
 const pivot = new THREE.Group();
 scene.add(pivot);
 
-loader.load("./assets/models/head_of_david_but_with_hay.glb", (gltf) => {
+loader.load("./assets/models/model.glb", (gltf) => {
   model = gltf.scene;
 
   const box = new THREE.Box3().setFromObject(model);
