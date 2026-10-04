@@ -4,23 +4,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 
 
-
-/*****| Fixed-elements |*****/
-
-const actions = document.querySelector(".fixed-actions");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 1) {
-    actions.classList.add("shrink");
-  } else {
-    actions.classList.remove("shrink");
-  }
-});
-
-
-
-/*****| 3D |*****/
-
+/*==========================| 3D Model |==========================*/
 const container = document.getElementById("three-container");
 
 const scene = new THREE.Scene();
@@ -56,7 +40,7 @@ let model;
 const pivot = new THREE.Group();
 scene.add(pivot);
 
-loader.load("./models/head_of_david_but_with_hay.glb", (gltf) => {
+loader.load("./assets/models/head_of_david_but_with_hay.glb", (gltf) => {
   model = gltf.scene;
 
   const box = new THREE.Box3().setFromObject(model);
@@ -99,16 +83,10 @@ animate();
 
 
 
-
-
-
-
-
-
-/***** | section Projects | *****/
+/*==========================| SECTION — PROJECTS |==========================*/
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".projects-track");
-  const container = document.querySelector(".projects-container");
+  const container = document.querySelector(".projects-content");
 
   const btnLeft = document.querySelector(".projects-btn-left");
   const btnRight = document.querySelector(".projects-btn-right");
@@ -204,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
 
-    // 👉 IMPORTANT : si l'utilisateur scroll verticalement → on ignore le drag
     if (!dragging && Math.abs(dy) > Math.abs(dx)) {
       isDragging = false;
       return;
@@ -248,10 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
     computeBounds();
     clamp();
   });
-
-  // ======================
-  // FILTERS (inchangé fonctionnellement)
-  // ======================
 
   if (!filterContainer) return;
 
@@ -320,5 +293,4 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFilters();
   filterCards();
 });
-
 
