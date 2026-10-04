@@ -257,7 +257,8 @@ main {
   height: 630px;
 }
 .box-content-tag {
-  width: 590px;
+  min-width: 400px;
+  max-width: 590px;
 }
 #three-container {
   width: 100%;
