@@ -257,8 +257,7 @@ main {
   height: 630px;
 }
 .box-content-tag {
-  min-width: 500px;
-  max-width: 590px;
+  width: 450px;
 }
 #three-container {
   width: 100%;
@@ -341,6 +340,14 @@ main {
 }
 
 @media (min-width: 1920px) {
+  .box-content-tag {
+    width: 530px;
+  }
+}
+.box-content-tag {
+  width: 530px;
+}
+@media (min-width: 2560px) {
   .section-skills {
     padding: 70px 50px 50px 50px; 
   }
@@ -351,6 +358,9 @@ main {
   .tag {
     padding: 5px 12px;
     font-size: 0.85rem;
+  }
+  .box-content-tag {
+    width: 630px;
   }
 }
 
