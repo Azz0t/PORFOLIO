@@ -341,11 +341,8 @@ main {
 
 @media (min-width: 1920px) {
   .box-content-tag {
-    width: 530px;
+    width: 500px;
   }
-}
-.box-content-tag {
-  width: 530px;
 }
 @media (min-width: 2560px) {
   .section-skills {
