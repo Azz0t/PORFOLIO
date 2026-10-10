@@ -206,10 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clamp();
   });
 
-  // ======================
-  // DRAG FIX (IMPORTANT)
-  // ======================
-
   container.addEventListener("mousedown", (e) => {
     isDragging = true;
     dragging = false;
@@ -350,3 +346,42 @@ document.addEventListener("DOMContentLoaded", () => {
   filterCards();
 });
 
+
+
+
+/*==========================| SCROLL |==========================*/
+
+const sections = [
+    document.querySelector(".section-masthead"),
+    document.querySelector(".section-skills"),
+    document.querySelector(".section-projects"),
+    document.querySelector("#footer")
+].filter(Boolean);
+
+let currentSection = 0;
+let targetSection = 0;
+let scrollTimeout;
+
+function goToSection(index) {
+    targetSection = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+    );
+
+    currentSection = targetSection;
+
+    sections[targetSection].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+window.addEventListener("wheel", (event) => {
+    event.preventDefault();
+
+    if (Math.abs(event.deltaY) < 2) return;
+
+    goToSection(
+        targetSection + (event.deltaY > 0 ? 1 : -1)
+    );
+}, { passive: false });
