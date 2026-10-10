@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -41,12 +42,22 @@ h2 {
   font-weight: 900;
   font-family: "DM Serif Display", serif;
 }
-@media (min-width: 2560px) {
+/*==========================
+1920px
+==========================*/
+@media (min-width: 1920px) {
   h2 {
     font-size: 3rem;
   }
 }
-
+/*==========================
+2560px
+==========================*/
+@media (min-width: 2560px) {
+  h2 {
+    font-size: 3.6rem;
+  }
+}
 
 /*==========================| FIXED-ACTIONS |==========================*/
 .fixed-actions {
@@ -83,6 +94,19 @@ h2 {
   color: #FBF7EC;
   border: 2px solid #FBF7EC;
 }
+
+/*==========================
+1920px
+==========================*/
+@media (min-width: 1920px) {
+  .fixed-actions ul li a {
+    padding: 5px 14px;
+    font-size: 0.9rem;
+  }
+}
+/*==========================
+2560px
+==========================*/
 @media (min-width: 2560px) {
   .fixed-actions ul li a {
     padding: 6px 15px;
@@ -178,69 +202,76 @@ h1 {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/*===| scroll-down-btn |===*/
-.scroll-down-btn {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  background: #FAF6ED;
-  cursor: pointer;
-  padding: 0;
+/*==========================
+1920px
+==========================*/
+@media (min-width: 1920px) {
+  .masthead-content {
+    width: 1100px;
+  }
+  h1 {
+    font-size: 4.2rem;
+  }
+  .masthead-info {
+    width: 570px;
+  }
+  .masthead-info .box-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .masthead-info .box-text .label {
+    font-size: 1.2rem;
+  }
+  .masthead-info .box-text .value {
+    font-size: 1.2rem;
+  }
 }
-.scroll-down-btn img {
-  margin-top: 2px;
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  user-select: none;
-  pointer-events: none;
-}
-
+/*==========================
+2560px
+==========================*/
 @media (min-width: 2560px) {
   .masthead-content {
     width: 1100px;
   }
   h1 {
-    font-size: 5.1rem;
+    font-size: 5.3rem;
   }
   .masthead-info {
-    width: 570px;
+    width: 620px;
   }
   .masthead-info .box-icon {
     width: 52px;
     height: 52px;
   }
   .masthead-info .box-text .label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .masthead-info .box-text .value {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
 
+
 /*==========================| MAIN |==========================*/
-main {
-  height: 220vh;
-  background-image: url('./assets/images/main-background.jpg');
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: no-repeat;
+.section-masthead,
+.section-skills,
+.section-projects,
+#footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 /*==========================| SECTION — SKILLS |==========================*/
 .section-skills {
   margin: 0 auto;
   height: 100vh;
+  background-image: url('./assets/images/main-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 50px 50px 50px 50px; 
+  border-bottom: 3px solid #4F2513;
 }
 .section-skills-content {
   display: grid; 
@@ -339,11 +370,17 @@ main {
   font-weight: 800;
 }
 
+/*==========================
+1920px
+==========================*/
 @media (min-width: 1920px) {
   .box-content-tag {
     width: 500px;
   }
 }
+/*==========================
+2560px
+==========================*/
 @media (min-width: 2560px) {
   .section-skills {
     padding: 70px 50px 50px 50px; 
@@ -362,10 +399,16 @@ main {
 }
 
 
+
 /*==========================| SECTION — PROJECTS |==========================*/
 .section-projects {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  background-image: url('./assets/images/main-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 3px solid #4F2513;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -575,7 +618,26 @@ main {
   border-radius: 10px;
   transition: width 0.15s linear;
 }
-
+/*==========================
+1920px
+==========================*/
+@media (min-width: 1920px) {
+  .projects-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .projects-btn img {
+    width: 13px;
+    height: 13px;
+  }
+  .projects-progress {
+    width: 200px;
+    height: 5px;
+  }
+}
+/*==========================
+2560px
+==========================*/
 @media (min-width: 2560px) {
   .tag {
     padding: 5px 12px;
@@ -592,13 +654,25 @@ main {
   .project-card-image img {
     height: 250px;
   }
+  .projects-btn {
+    width: 42px;
+    height: 42px;
+  }
+  .projects-btn img {
+    width: 15px;
+    height: 15px;
+  }
+  .projects-progress {
+    width: 240px;
+    height: 6px;
+  }
 }
 
 /*==========================| FOOTER |==========================*/
 footer {
   position: relative;
   width: 100%;
-  margin-top: -300px;
+  height: 100vh;
 }
 
 footer img {
