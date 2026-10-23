@@ -618,6 +618,7 @@ h1 {
   border-radius: 10px;
   transition: width 0.15s linear;
 }
+
 /*==========================
 1920px
 ==========================*/
@@ -665,6 +666,17 @@ h1 {
   .projects-progress {
     width: 240px;
     height: 6px;
+  }
+
+  .project-card h4 {
+    font-size: 1.9rem;
+  }
+  .tag-solo-in-project {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+  }
+  .project-description {
+    font-size: 0.9rem;
   }
 }
 
@@ -725,4 +737,22 @@ footer .droits {
   color: #4F2513;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+/*==========================
+2560px
+==========================*/
+@media (min-width: 2560px) {
+  .footer-box-links a {
+    gap: 14px;
+    font-size: 1.45rem;
+  }
+  .footer-box-links a img {
+    width: 40px; 
+  }
+
+  footer .droits {
+    bottom: 20px;
+    font-size: 0.9rem;
+  }
 }
