@@ -489,7 +489,7 @@ h1 {
 /*===| project-card |===*/
 .project-card {
   width: 440px;
-  height: 440px;
+  height: 480px;
   flex-shrink: 0;
   box-sizing: border-box;
 
@@ -506,7 +506,7 @@ h1 {
   padding: 8px;
   background-color: #441f10;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  border-radius: 10px;
 
   backface-visibility: hidden;
   -webkit-user-drag: none;
@@ -515,7 +515,7 @@ h1 {
 /*===| project-card-img |===*/
 .project-card-image img {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
   border-radius: 6px;
   user-select: none;
@@ -564,9 +564,9 @@ h1 {
   align-items: center;
   justify-content: end;
   text-decoration: none;
-  padding: 6px 0 0 0;
+  padding: 8px 2px 0 0;
   gap: 6px;
-  border-top: 1px solid #f5f1ed9e;
+  border-top: 1px solid #f5f1ed75;
 }
 .box-link a p {
   color: #F5F1ED;
