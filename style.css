@@ -489,7 +489,7 @@ h1 {
 /*===| project-card |===*/
 .project-card {
   width: 440px;
-  height: 420px;
+  height: 440px;
   flex-shrink: 0;
   box-sizing: border-box;
 
