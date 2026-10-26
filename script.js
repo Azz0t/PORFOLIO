@@ -1,758 +1,387 @@
-/*==========================| GLOBAL |==========================*/
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  font-family: "Montserrat", sans-serif;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-p {
-  margin: 0;
-}
-.mt-0 {
-  margin-top: 0 !important;
-}
-.mt-14 {
-  margin-top: 14px !important;
-}
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #4F2513; 
-  text-align: center;
-  font-size: 2.6rem;
-  margin: 0;
-  font-weight: 900;
-  font-family: "DM Serif Display", serif;
-}
-/*==========================
-1920px
-==========================*/
-@media (min-width: 1920px) {
-  h2 {
-    font-size: 3rem;
-  }
-}
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  h2 {
-    font-size: 3.6rem;
-  }
-}
-
-/*==========================| FIXED-ACTIONS |==========================*/
-.fixed-actions {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-.fixed-actions ul {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.fixed-actions ul li a {
-  display: inline-block;
-  padding: 5px 13px;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  background-color: #FBF7EC;
-  color: #4F2513;
-  border: 2px solid #4F2513;
-  text-decoration: none;
-  box-sizing: border-box;
-  background-clip: padding-box;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.fixed-actions ul li a:hover {
-  background-color: #4F2513;
-  color: #FBF7EC;
-  border: 2px solid #FBF7EC;
-}
-
-/*==========================
-1920px
-==========================*/
-@media (min-width: 1920px) {
-  .fixed-actions ul li a {
-    padding: 5px 14px;
-    font-size: 0.9rem;
-  }
-}
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  .fixed-actions ul li a {
-    padding: 6px 15px;
-    font-size: 1rem;
-  }
-}
-
-/*==========================| SECTION — MASTHEAD |==========================*/
-.section-masthead {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-image: url('./assets/images/masthead-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-}
-.masthead-content {
-  width: 900px;
-  margin-left: 10%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-h1 {
-  color: #FBF7EE;
-  margin: 0 0 10px 0;
-  font-family: "DM Serif Display", serif;
-  font-size: 4rem;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  line-height: 0.9;
-  text-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-}
-
-.masthead-info {
-  display: block;
-  width: 440px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-  background-image: url('./assets/images/main-background.jpg');
-  background-size: cover;   
-  background-position: center;  
-  background-repeat: no-repeat; 
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  padding: 10px;
-}
-
-/*===| box-icon |===*/
-.masthead-info .box-icon {
-  background-color: #FAF6ED;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.23);
-  width: 44px;
-  height: 44px;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.masthead-info .box-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/*===| box-text |===*/
-.box-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-}
-.masthead-info .box-text .label {
-  color: #4F2513; 
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  text-transform: uppercase;
-}
-.masthead-info .box-text .value {
-  color: #4F2513; 
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-/*==========================
-1920px
-==========================*/
-@media (min-width: 1920px) {
-  .masthead-content {
-    width: 1100px;
-  }
-  h1 {
-    font-size: 4.2rem;
-  }
-  .masthead-info {
-    width: 570px;
-  }
-  .masthead-info .box-icon {
-    width: 50px;
-    height: 50px;
-  }
-  .masthead-info .box-text .label {
-    font-size: 1.2rem;
-  }
-  .masthead-info .box-text .value {
-    font-size: 1.2rem;
-  }
-}
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  .masthead-content {
-    width: 1100px;
-  }
-  h1 {
-    font-size: 5.3rem;
-  }
-  .masthead-info {
-    width: 620px;
-  }
-  .masthead-info .box-icon {
-    width: 52px;
-    height: 52px;
-  }
-  .masthead-info .box-text .label {
-    font-size: 1.6rem;
-  }
-  .masthead-info .box-text .value {
-    font-size: 1.2rem;
-  }
-}
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 
 
+/*==========================| 3D Model |==========================*/
+const container = document.getElementById("three-container");
 
-/*==========================| MAIN |==========================*/
-.section-masthead,
-.section-skills,
-.section-projects,
-#footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+if (!container) {
+throw new Error('Élément "#three-container" introuvable dans le HTML.');
 }
 
-/*==========================| SECTION — SKILLS |==========================*/
-.section-skills {
-  margin: 0 auto;
-  height: 100vh;
-  background-image: url('./assets/images/main-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 50px 50px 50px 50px; 
-  border-bottom: 3px solid #4F2513;
-}
-.section-skills-content {
-  display: grid; 
-  grid-template-columns: 1fr 0.8fr 1fr;
-  gap: 0px;
-  justify-content: center;
-  align-items: center;
-}
-.tag-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  height: 630px;
-}
-.box-content-tag {
-  width: 450px;
-}
-#three-container {
-  width: 100%;
-  height: 80vh;
-}
+const scene = new THREE.Scene();
 
-/*===| h3 |===*/
-.section-skills h3 {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #4F2513; 
-  margin: 36px 0 14px 0;
-  font-size: 1.4rem;
-  font-weight: 900;
-  font-family: "DM Serif Display", serif;
-}
-.section-skills h3::before,
-.section-skills h3::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid #4F2513; 
-}
-.section-skills h3::before {
-  margin-right: 16px;
-}
-.section-skills h3::after {
-  margin-left: 16px;
-}
+const camera = new THREE.PerspectiveCamera(
+45,
+1,
+0.1,
+4000
+);
 
-/*===| tag-container |===*/
-.container-row-tags {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.container-col-tags {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 6px;
-}
+camera.position.set(0, 2, 10);
 
-/*===| tags |===*/
-.tag {
-  padding: 4px 10px;
-  margin: 0;
-  border-radius: 4px;
-  background-color: #4F2513;
-  color: #F5F1ED;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-.tag-solo {
-  display: inline-block;
-  padding: 4px 10px;
-  margin: 0;
-  border-radius: 4px;
-  background-color: #4F2513;
-  color: #F5F1ED;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-.tag-solo-in-project {
-  display: inline-block;
-  padding: 3px 8px;
-  margin: 0;
-  border-radius: 4px;
-  background-color: #F5F1ED;
-  color: #4F2513;
-  font-size: 0.75rem;
-  font-weight: 800;
-}
+const renderer = new THREE.WebGLRenderer({
+antialias: true,
+alpha: true
+});
 
-/*==========================
-1920px
-==========================*/
-@media (min-width: 1920px) {
-  .box-content-tag {
-    width: 500px;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x000000, 0);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+container.appendChild(renderer.domElement);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(5, 10, 7);
+scene.add(directionalLight);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+controls.enableZoom = false;
+controls.enablePan = false;
+controls.enableRotate = true;
+
+controls.minPolarAngle = Math.PI / 2;
+controls.maxPolarAngle = Math.PI / 2;
+
+const pivot = new THREE.Group();
+scene.add(pivot);
+
+const loader = new GLTFLoader();
+
+loader.setMeshoptDecoder(MeshoptDecoder);
+
+loader.load(
+"./assets/models/model.glb",
+
+(gltf) => {
+const model = gltf.scene;
+
+const box = new THREE.Box3().setFromObject(model);
+const center = box.getCenter(new THREE.Vector3());
+const size = box.getSize(new THREE.Vector3());
+
+model.position.sub(center);
+
+pivot.add(model);
+
+const maxDimension = Math.max(size.x, size.y, size.z);
+
+const fovRadians = THREE.MathUtils.degToRad(camera.fov);
+const distance = (maxDimension / 2) / Math.tan(fovRadians / 2);
+
+camera.position.set(
+  0,
+  maxDimension * 0.08,
+  Math.max(distance * 1.6, 1)
+);
+
+camera.near = Math.max(maxDimension / 1000, 0.01);
+camera.far = Math.max(maxDimension * 100, 1000);
+camera.updateProjectionMatrix();
+
+controls.target.set(0, 0, 0);
+controls.update();
+
+console.log("Modèle GLB chargé avec succès :", model);
+console.log("Dimensions du modèle :", size);
+
+},
+
+(progress) => {
+  if (progress.total > 0) {
+    const percent = (progress.loaded / progress.total) * 100;
+
+    console.log(`Chargement du modèle : ${percent.toFixed(1)} %`);
   }
+},
+
+(error) => {
+console.error("Erreur lors du chargement du modèle GLB :", error);
 }
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  .section-skills {
-    padding: 70px 50px 50px 50px; 
-  }
-  .section-skills h3 {
-    margin: 36px 0 14px 0;
-    font-size: 2rem;
-  }
-  .tag {
-    padding: 5px 12px;
-    font-size: 0.85rem;
-  }
-  .box-content-tag {
-    width: 630px;
-  }
+);
+
+function resize() {
+const width = container.clientWidth;
+const height = container.clientHeight;
+
+if (width === 0 || height === 0) {
+return;
 }
+
+camera.aspect = width / height;
+camera.updateProjectionMatrix();
+
+renderer.setSize(width, height);
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+function animate() {
+requestAnimationFrame(animate);
+
+pivot.rotation.y += 0.001;
+
+controls.update();
+renderer.render(scene, camera);
+}
+
+animate();
 
 
 
 /*==========================| SECTION — PROJECTS |==========================*/
-.section-projects {
-  width: 100%;
-  height: 100vh;
-  background-image: url('./assets/images/main-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-bottom: 3px solid #4F2513;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  user-select: none;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".projects-track");
+  const container = document.querySelector(".projects-content");
 
-.section-projects h2 {
-  margin-bottom: 40px
-}
+  const btnLeft = document.querySelector(".projects-btn-left");
+  const btnRight = document.querySelector(".projects-btn-right");
 
-.projects-content {
-  width: 100%;
-  overflow: hidden;
-  cursor: grab;
-}
+  const progressBar = document.querySelector(".projects-progress-bar");
+  const filterContainer = document.querySelector(".projects-filters");
 
-.projects-content:active {
-  cursor: grabbing;
-}
+  if (!track || !container) return;
 
-.projects-line {
-  display: flex;
-  gap: 40px;
-  width: max-content; 
-}
+  const STEP = 440;
 
-.projects-track {
-  display: flex;
-  gap: 40px;
-  width: max-content;
-  will-change: transform;
-}
+  let isDragging = false;
+  let dragging = false;
 
-.spacer {
-  flex: 0 0 0;
-}
+  let startX = 0;
+  let startY = 0;
 
-/*===| projects-filters |===*/
-.projects-filters {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  padding: 3px 8px;
-  margin: 0;
-  border-radius: 4px;
-  border: 2px solid transparent;
-  background-color: #4F2513;
-  color: #F5F1ED;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.filter-btn:hover {
-  background-color: #F5F1ED;
-  color: #4F2513;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 2px solid #4F2513;
-}
-.filter-btn.active {
-  background-color: #F5F1ED;
-  color: #4F2513;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 2px solid #4F2513;
-}
+  let x = 0;
+  let targetX = 0;
+  let velocity = 0;
 
-/*===| project-card |===*/
-.project-card {
-  width: 440px;
-  height: 480px;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  let minX = 0;
+  let maxX = 0;
 
-  display: flex;
-  flex-direction: column;
-
-  background-image: url('./assets/images/brown-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: #F5F1ED;
-  text-decoration: none;
-  padding: 8px;
-  background-color: #441f10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-
-  backface-visibility: hidden;
-  -webkit-user-drag: none;
-}
-
-/*===| project-card-img |===*/
-.project-card-image img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 6px;
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-.project-card-image:hover img {
-  filter: none;
-}
-
-/*===| project-card-content |===*/
-.project-card-content {
-  margin: 6px ;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 0;
-  box-sizing: border-box;
-}
-
-.box-text {
-  flex-shrink: 0;
-}
-.project-card h4 {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-.project-card-box-skills {
-  margin: 2px 0 8px 0; 
-}
-.project-description {
-  margin-right: 14px;
-  font-size: 0.7rem;
-  font-weight: 400;
-}
-
-.box-link {
-  margin-top: auto;
-}
-.box-link a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: end;
-  text-decoration: none;
-  padding: 8px 2px 0 0;
-  gap: 6px;
-  border-top: 1px solid #f5f1ed75;
-}
-.box-link a p {
-  color: #F5F1ED;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-.box-link a img {
-  width: 13px;
-}
-
-/*===| projects-controls |===*/
-.projects-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-top: 25px;
-}
-.projects-btn {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  background: #4F2513;
-  cursor: pointer;
-  padding: 0;
-}
-.projects-btn img {
-  width: 12px;
-  height: 12px;
-  object-fit: contain;
-  user-select: none;
-  pointer-events: none;
-}
-.projects-progress {
-  width: 180px;
-  height: 4px;
-  background:#F0E6D4;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.projects-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #6e371f;
-  border-radius: 10px;
-  transition: width 0.15s linear;
-}
-
-/*==========================
-1920px
-==========================*/
-@media (min-width: 1920px) {
-  .projects-btn {
-    width: 36px;
-    height: 36px;
-  }
-  .projects-btn img {
-    width: 13px;
-    height: 13px;
-  }
-  .projects-progress {
-    width: 200px;
-    height: 5px;
-  }
-}
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  .tag {
-    padding: 5px 12px;
-    font-size: 0.85rem;
-  }
-  .filter-btn {
-    padding: 5px 12px;
-    font-size: 0.85rem;
-  }
-  .project-card {
-    width: 560px;
-    height: 500px;
-  }
-  .project-card-image img {
-    height: 250px;
-  }
-  .projects-btn {
-    width: 42px;
-    height: 42px;
-  }
-  .projects-btn img {
-    width: 15px;
-    height: 15px;
-  }
-  .projects-progress {
-    width: 240px;
-    height: 6px;
+  function computeBounds() {
+    maxX = 0;
+    minX = Math.min(0, container.clientWidth - track.scrollWidth);
   }
 
-  .project-card h4 {
-    font-size: 1.9rem;
-  }
-  .tag-solo-in-project {
-    padding: 5px 12px;
-    font-size: 0.85rem;
-  }
-  .project-description {
-    font-size: 0.9rem;
-  }
-}
-
-/*==========================| FOOTER |==========================*/
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-
-  background-image: url('./assets/images/main-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-footer h2 {
-  margin: 0 0 40px 0;
-}
-
-.footer-box-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 20px;
-}
-.footer-box-links a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #4F2513;
-  padding: 10px 12px;
-  border-radius: 10px;
-  transition: 0.2s ease;
-}
-.footer-box-links a:hover {
-  background: #F0E6D3;
-  transform: translateY(-2px);
-}
-.footer-box-links a img {
-  width: 34px; 
-  object-fit: contain;
-}
-
-footer .droits {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: #4F2513;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-/*==========================
-2560px
-==========================*/
-@media (min-width: 2560px) {
-  .footer-box-links a {
-    gap: 14px;
-    font-size: 1.45rem;
-  }
-  .footer-box-links a img {
-    width: 40px; 
+  function clamp() {
+    targetX = Math.max(minX, Math.min(maxX, targetX));
   }
 
-  footer .droits {
-    bottom: 20px;
-    font-size: 0.9rem;
+  function applyTransform() {
+    track.style.transform = `translate3d(${x}px,0,0)`;
   }
+
+  function updateProgress() {
+    if (!progressBar) return;
+
+    const total = maxX - minX;
+
+    if (total <= 0) {
+      progressBar.style.width = "100%";
+      return;
+    }
+
+    const progress = 1 - ((x - minX) / total);
+
+    progressBar.style.width =
+      `${Math.max(0, Math.min(1, progress)) * 100}%`;
+  }
+
+  btnLeft?.addEventListener("click", () => {
+    targetX += STEP;
+    clamp();
+  });
+
+  btnRight?.addEventListener("click", () => {
+    targetX -= STEP;
+    clamp();
+  });
+
+  container.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    dragging = false;
+
+    startX = e.clientX;
+    startY = e.clientY;
+
+    velocity = 0;
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  window.addEventListener("mouseleave", () => {
+    isDragging = false;
+  });
+
+  window.addEventListener("blur", () => {
+    isDragging = false;
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    if (!dragging && Math.abs(dy) > Math.abs(dx)) {
+      isDragging = false;
+      return;
+    }
+
+    dragging = true;
+
+    startX = e.clientX;
+
+    x += dx;
+    targetX = x;
+
+    velocity = Math.max(-30, Math.min(30, dx));
+
+    clamp();
+    applyTransform();
+  });
+
+  function animateProjects() {
+    if (!dragging && !isDragging) {
+      targetX += velocity;
+      velocity *= 0.92;
+
+      if (Math.abs(velocity) < 0.01) velocity = 0;
+    }
+
+    clamp();
+
+    x += (targetX - x) * 0.12;
+
+    applyTransform();
+    updateProgress();
+
+    requestAnimationFrame(animateProjects);
+  }
+
+  computeBounds();
+  animateProjects();
+
+  window.addEventListener("resize", () => {
+    computeBounds();
+    clamp();
+  });
+
+  if (!filterContainer) return;
+
+  let selectedTag = "ALL";
+
+  function getAllTags() {
+    return [
+      "ALL",
+      ...new Set(
+        [...document.querySelectorAll(".tag-solo-in-project")]
+          .map(tag => tag.textContent.trim())
+      )
+    ];
+  }
+
+  function filterCards() {
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach(card => {
+      const tags = [...card.querySelectorAll(".tag-solo-in-project")]
+        .map(tag => tag.textContent.trim());
+
+      card.style.display =
+        selectedTag === "ALL" || tags.includes(selectedTag)
+          ? ""
+          : "none";
+    });
+
+    computeBounds();
+    clamp();
+  }
+
+  function renderFilters() {
+    const tags = getAllTags();
+
+    filterContainer.innerHTML = "";
+
+    const fragment = document.createDocumentFragment();
+
+    tags.forEach(tag => {
+      const btn = document.createElement("button");
+
+      btn.textContent = tag;
+      btn.className = "filter-btn";
+
+      if (tag === "ALL") btn.classList.add("active");
+
+      btn.addEventListener("click", () => {
+        selectedTag = tag;
+
+        filterContainer
+          .querySelectorAll(".filter-btn")
+          .forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        filterCards();
+      });
+
+      fragment.appendChild(btn);
+    });
+
+    filterContainer.appendChild(fragment);
+  }
+
+  renderFilters();
+  filterCards();
+});
+
+
+
+
+/*==========================| SCROLL |==========================*/
+
+const sections = [
+    document.querySelector(".section-masthead"),
+    document.querySelector(".section-skills"),
+    document.querySelector(".section-projects"),
+    document.querySelector("#footer")
+].filter(Boolean);
+
+let currentSection = 0;
+let targetSection = 0;
+let scrollTimeout;
+
+function goToSection(index) {
+    targetSection = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+    );
+
+    currentSection = targetSection;
+
+    sections[targetSection].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
+
+window.addEventListener("wheel", (event) => {
+    event.preventDefault();
+
+    if (Math.abs(event.deltaY) < 2) return;
+
+    goToSection(
+        targetSection + (event.deltaY > 0 ? 1 : -1)
+    );
+}, { passive: false });
