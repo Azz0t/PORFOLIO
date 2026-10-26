@@ -543,11 +543,11 @@ h1 {
 }
 .project-card h4 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 .project-card-box-skills {
-  margin: 2px 0 8px 0; 
+  margin: 0px 0 10px 0; 
 }
 .project-description {
   margin-right: 14px;
@@ -557,6 +557,12 @@ h1 {
 
 .box-link {
   margin-top: auto;
+  border-top: 1px solid #f5f1ed75;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 14px;
 }
 .box-link a {
   display: flex;
@@ -565,8 +571,7 @@ h1 {
   justify-content: end;
   text-decoration: none;
   padding: 8px 2px 0 0;
-  gap: 6px;
-  border-top: 1px solid #f5f1ed75;
+  gap: 4px;
 }
 .box-link a p {
   color: #F5F1ED;
