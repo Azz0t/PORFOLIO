@@ -360,7 +360,7 @@ h1 {
   border-radius: 4px;
   background-color: #4F2513;
   color: #F5F1ED;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
 }
 .tag-solo-in-project {
@@ -382,6 +382,10 @@ h1 {
     width: 500px;
   }
   .tag {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+  .tag-solo {
     padding: 4px 10px;
     font-size: 0.75rem;
   }
@@ -532,8 +536,8 @@ h1 {
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
-.project-card-image:hover img {
-  filter: none;
+.project-card:hover .project-card-image img {
+  filter: grayscale(0%);
 }
 
 /*===| project-card-content |===*/
@@ -579,15 +583,19 @@ h1 {
   justify-content: end;
   text-decoration: none;
   padding: 8px 2px 0 0;
-  gap: 4px;
+  gap: 6px;
 }
 .box-link a p {
   color: #F5F1ED;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 .box-link a img {
-  width: 13px;
+  width: 11px;
+}
+.box-link a:hover p {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /*===| projects-controls |===*/
