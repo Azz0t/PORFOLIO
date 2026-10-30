@@ -42,6 +42,10 @@ h2 {
   font-weight: 900;
   font-family: "DM Serif Display", serif;
 }
+
+.italic {
+  font-style: italic;
+}
 /*==========================
 1920px
 ==========================*/
