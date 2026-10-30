@@ -274,7 +274,7 @@ h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 50px 50px 50px 50px; 
+  padding:25px 50px 50px 50px; 
   border-bottom: 3px solid #4F2513;
 }
 .section-skills-content {
@@ -388,6 +388,9 @@ h1 {
   .tag-solo {
     padding: 4px 10px;
     font-size: 0.75rem;
+  }
+  .section-skills {
+    padding: 50px 50px 50px 50px; 
   }
 }
 /*==========================
